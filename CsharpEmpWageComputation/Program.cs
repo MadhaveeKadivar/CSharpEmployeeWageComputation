@@ -19,24 +19,30 @@ namespace CsharpEmpWageComputation
             int empDailyWage = 0;
             Random random = new Random();
             int check = random.Next(0, 3);
-            if(check == isFullTime)
+            switch (check)
             {
-                Console.WriteLine("Employee is Present for Full Time");
-                empWorkHour = 8;
+                case isFullTime:            
+                    Console.WriteLine("Employee is Present for Full Time");
+                    empWorkHour = 8;
+                    break;
+           
+                case isPartTime:            
+                    Console.WriteLine("Employee is Present for Part Time");
+                    empWorkHour = 4;
+                    break;
+
+                default:
+                    Console.WriteLine("Employee is Absent");
+                    empWorkHour = 0;
+                    break;
             }
-            else if (check == isPartTime)
-            {
-                Console.WriteLine("Employee is Present for Part Time");
-                empWorkHour = 4;
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-                empWorkHour = 0;
-            }
-            empDailyWage = empWorkHour*wagePerHour;
+
+            empDailyWage = empWorkHour * wagePerHour;
             Console.WriteLine($"\nEmployee Daily Wage : {empDailyWage}\n");
             Console.ReadLine();
         }
+            
+            
     }
 }
+
