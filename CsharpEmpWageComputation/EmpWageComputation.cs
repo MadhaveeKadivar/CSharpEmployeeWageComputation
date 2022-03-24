@@ -12,37 +12,43 @@ namespace CsharpEmpWageComputation
         {
             Console.WriteLine("Welcome to Employee Wage Compuatation Program\n");
 
-            const int isFullTime = 1;
-            const int isPartTime = 2;
-            const int wagePerHour = 20;
+            const int IS_FULL_TIME = 1;
+            const int IS_PART_TIME = 2;
+            const int WAGE_PER_HOUR = 20;
+            const int MAX_WORKING_DAYS = 20;
+            int totalMonthWage = 0;
             int empWorkHour = 0;
             int empDailyWage = 0;
             Random random = new Random();
-            int check = random.Next(0, 3);
-            switch (check)
+            for (int day = 1; day <= MAX_WORKING_DAYS; day++)
             {
-                case isFullTime:            
-                    Console.WriteLine("Employee is Present for Full Time");
-                    empWorkHour = 8;
-                    break;
-           
-                case isPartTime:            
-                    Console.WriteLine("Employee is Present for Part Time");
-                    empWorkHour = 4;
-                    break;
+                int check = random.Next(0, 3);
+                switch (check)
+                {
+                    case IS_FULL_TIME:
+                        Console.WriteLine("Employee is Present for Full Time");
+                        empWorkHour = 8;
+                        break;
 
-                default:
-                    Console.WriteLine("Employee is Absent");
-                    empWorkHour = 0;
-                    break;
+                    case IS_PART_TIME:
+                        Console.WriteLine("Employee is Present for Part Time");
+                        empWorkHour = 4;
+                        break;
+
+                    default:
+                        Console.WriteLine("Employee is Absent");
+                        empWorkHour = 0;
+                        break;
+                }
+
+                empDailyWage = empWorkHour * WAGE_PER_HOUR;
+                Console.WriteLine($"Employee Daily Wage for Day {day} : {empDailyWage}\n");
+                totalMonthWage += empDailyWage;
+                totalMonthWage += empDailyWage;
             }
-
-            empDailyWage = empWorkHour * wagePerHour;
-            Console.WriteLine($"\nEmployee Daily Wage : {empDailyWage}\n");
+            Console.WriteLine($"\nEmployee Total Month Wage : {totalMonthWage}\n");
             Console.ReadLine();
         }
-            
-            
+
     }
 }
-
