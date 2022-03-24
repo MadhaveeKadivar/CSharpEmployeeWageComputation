@@ -44,7 +44,6 @@ namespace CsharpEmpWageComputation
                 empDailyWage = empWorkHour * WAGE_PER_HOUR;
                 Console.WriteLine($"Employee Daily Wage for Day {day} : {empDailyWage}\n");
                 totalMonthWage += empDailyWage;
-                totalMonthWage += empDailyWage;
             }
             Console.WriteLine($"\nEmployee Total Month Wage : {totalMonthWage}\n");
             Console.ReadLine();
