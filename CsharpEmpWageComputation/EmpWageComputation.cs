@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CsharpEmpWageComputation
 {
-    internal class Program
+    internal class EmpWageComputation
     {
         static void Main(string[] args)
         {
