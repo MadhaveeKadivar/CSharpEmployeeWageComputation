@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,10 +17,11 @@ namespace CsharpEmpWageComputation
             const int MAX_WORKING_DAYS = 20;
             const int MAX_WORK_HOURS = 100;
             int totalMonthWage = 0,empWorkHour = 0, empDailyWage = 0,empTotalHour=0,empTotalWorkDays=0;           
-            Random random = new Random();
-            while(empTotalHour<=MAX_WORK_HOURS && empTotalWorkDays<=MAX_WORKING_DAYS)
+            Random random = new Random(); // Creating object of Random class
+            while(empTotalHour<=MAX_WORK_HOURS && empTotalWorkDays<=MAX_WORKING_DAYS) // Checking that Employee total work hours should be less than or equal to 100 or Employee working days should be Less or equl to 20 
             {
-                int check = random.Next(0, 3);
+                int check = random.Next(0, 3); // Generating random number 0 , 1 , 2
+                // Checking that employee is present for full time ,part time or not using switch
                 switch (check)
                 {
                     case IS_FULL_TIME:
@@ -37,21 +38,21 @@ namespace CsharpEmpWageComputation
                         Console.WriteLine("Employee is Absent");
                         empWorkHour = 0;
                         break;
-                }                
-                empDailyWage = empWorkHour * WAGE_PER_HOUR;
+                }            
+                empDailyWage = empWorkHour * WAGE_PER_HOUR; // Calculating Daily Wage of Employee
                 Console.WriteLine($"Employee Daily Wage for Day {empTotalWorkDays} : {empDailyWage}\n");
-                totalMonthWage += empDailyWage;
+                totalMonthWage += empDailyWage; // Adding Daily Wage to Total Wage
                 empTotalWorkDays++;
                 empTotalHour += empWorkHour;
             }
-            if (empTotalHour > MAX_WORK_HOURS)
+            if (empTotalHour > MAX_WORK_HOURS) //Checking that hours are more than 100 or not
             {
                 int a = empTotalHour - MAX_WORK_HOURS;
                 empTotalHour -= a;
-                int wage = a * WAGE_PER_HOUR;
-                totalMonthWage -= wage;
+                int wage = a * WAGE_PER_HOUR; // Calculate exatra hours wage
+                totalMonthWage -= wage; // Minus extra hours wage from emp total wage
             }
-            if (empTotalWorkDays > MAX_WORKING_DAYS)
+            if (empTotalWorkDays > MAX_WORKING_DAYS) 
             {
                 empTotalWorkDays -= 1;
             }
