@@ -11,14 +11,13 @@ namespace CsharpEmpWageComputation
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Compuatation Program\n");
-
             const int isPresent = 1;
             const int wagePerHour = 20;
             int empWorkHour = 0;
             int empDailyWage = 0;
-            Random random = new Random();
-            int check = random.Next(0, 2);
-            if(check == isPresent)
+            Random random = new Random(); // Creating object of Random class
+            int check = random.Next(0, 2); // Generating random number 0 or 1
+            if(check == isPresent) // Checking that employee is present or not
             {
                 Console.WriteLine("Employee is Present");
                 empWorkHour = 8;
@@ -28,7 +27,7 @@ namespace CsharpEmpWageComputation
                 Console.WriteLine("Employee is Absent");
                 empWorkHour = 0;
             }
-            empDailyWage = empWorkHour*wagePerHour;
+            empDailyWage = empWorkHour*wagePerHour; // Calculating Daily Wage of Employee
             Console.WriteLine($"\nEmployee Daily Wage : {empDailyWage}\n");
             Console.ReadLine();
         }
