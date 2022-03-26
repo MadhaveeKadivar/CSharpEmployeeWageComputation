@@ -38,15 +38,12 @@ namespace CsharpEmpWageComputation
                         Console.WriteLine("Employee is Absent");
                         empWorkHour = 0;
                         break;
-                }
-
-                
+                }            
                 empDailyWage = empWorkHour * WAGE_PER_HOUR; // Calculating Daily Wage of Employee
                 Console.WriteLine($"Employee Daily Wage for Day {empTotalWorkDays} : {empDailyWage}\n");
                 totalMonthWage += empDailyWage; // Adding Daily Wage to Total Wage
                 empTotalWorkDays++;
                 empTotalHour += empWorkHour;
-
             }
             if (empTotalHour > MAX_WORK_HOURS) //Checking that hours are more than 100 or not
             {
@@ -55,7 +52,6 @@ namespace CsharpEmpWageComputation
                 int wage = a * WAGE_PER_HOUR; // Calculate exatra hours wage
                 totalMonthWage -= wage; // Minus extra hours wage from emp total wage
             }
-
             if (empTotalWorkDays > MAX_WORKING_DAYS) 
             {
                 empTotalWorkDays -= 1;
@@ -65,6 +61,5 @@ namespace CsharpEmpWageComputation
             Console.WriteLine($"\nEmployee Total Month Wage : {totalMonthWage}\n");
             Console.ReadLine();
         }
-
     }
 }
