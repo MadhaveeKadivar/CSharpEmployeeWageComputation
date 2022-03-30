@@ -11,7 +11,6 @@ namespace CsharpEmpWageComputation
         //Variables
         public string companyName;
         public int wagePerHour, maxWorkingDays, maxWorkingHours, totalEmpMonthWage;
-
         public CompanyEmpWage(string companyName, int wagePerHour, int maxWorkingDays, int maxWorkingHours) // CompanyEmpWage class constructor with arguments
         {
             this.companyName = companyName;
@@ -27,6 +26,5 @@ namespace CsharpEmpWageComputation
         {
             return "";
         }
-
     }
 }
