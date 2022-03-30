@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CsharpEmpWageComputation
 {
-    internal class EmpWageBuilder
+    internal class EmpWageBuilder : IComputeWage
     {
         //constant variables
         const int IS_FULL_TIME = 1;
@@ -14,13 +14,11 @@ namespace CsharpEmpWageComputation
         //variables
         private int numberOfCompany = 0;
         private CompanyEmpWage[] companyEmpWagesArray = new CompanyEmpWage[5];//Creating an array of CompanyEmpWage Object Type
-
         public void AddCompany(string companyName, int wagePerHour, int maxWorkingDays, int maxWorkingHours) // creating class method to add company in array
         {
             companyEmpWagesArray[numberOfCompany] = new CompanyEmpWage(companyName, wagePerHour, maxWorkingDays, maxWorkingHours);
             numberOfCompany++;
         }
-
         public void IterateOverListOfCompany()
         {
             for (int i = 0; i < numberOfCompany; i++)
@@ -29,7 +27,7 @@ namespace CsharpEmpWageComputation
                 ComputeWage(companyEmpWagesArray[i]);
             }
         }
-        private int ComputeWage(CompanyEmpWage obj) //Creating a class method for Wage Computation with parameters
+        public int ComputeWage(CompanyEmpWage obj) //Creating a class method for Wage Computation with parameters
         {
             int empWorkHour = 0, empDailyWage = 0, empTotalHour = 0, empTotalWorkDays = 0,totalMonthWage=0;
             Random random = new Random(); // Creating object of Random class
@@ -54,7 +52,7 @@ namespace CsharpEmpWageComputation
                         break;
                 }
                 empDailyWage = empWorkHour * obj.wagePerHour; // Calculating Daily Wage of Employee
-                                                          // Console.WriteLine($"Employee Daily Wage for Day {empTotalWorkDays} : {empDailyWage}\n");
+             // Console.WriteLine($"Employee Daily Wage for Day {empTotalWorkDays} : {empDailyWage}\n");
                 totalMonthWage += empDailyWage; // Adding Daily Wage to Total Wage
                 empTotalWorkDays++;
                 empTotalHour += empWorkHour;
