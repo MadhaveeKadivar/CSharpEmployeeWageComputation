@@ -15,6 +15,8 @@ namespace CsharpEmpWageComputation
             empWageBuilder.AddCompany("Bridgelabz", 20, 20, 100);
             empWageBuilder.AddCompany("TCS", 40, 25, 100);
             empWageBuilder.IterateOverListOfCompany();
+            Console.WriteLine($"\nTotal Wage for Bridgelabz company is : {empWageBuilder.getTotalWage("Bridgelabz")}");
+            Console.WriteLine($"\nTotal Wage for TCS company is : {empWageBuilder.getTotalWage("TCS")}");
             Console.ReadLine();
         }
     }

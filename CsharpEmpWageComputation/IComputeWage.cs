@@ -10,7 +10,8 @@ namespace CsharpEmpWageComputation
     {
         void AddCompany(string companyName, int wagePerHour, int maxWorkingDays, int maxWorkingHours);
         void IterateOverListOfCompany();
-      //  int ComputeWage(CompanyEmpWage obj);
+     
+        //  int ComputeWage(CompanyEmpWage obj);
 
     }
 }
